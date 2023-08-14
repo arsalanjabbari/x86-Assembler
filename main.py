@@ -1,50 +1,8 @@
 '''
-Assembler (project.py)
-Program Description: This is our project and we want to create an assembler with python.
-                     Which can support and , or , add , sub , jump and it should have ability of working with memory.
-Author: Mohammad Hossein Jabbari
-University: Shiraz University
-Student Number: 9932125
-version: 3.1.1
-Creation Date: 12/27/2021
-
-Sources: https://x86.puri.sm/ , http://www.c-jump.com/CIS77/CPU/x86/lecture.html#X77_0080_mod_reg_r_m_byte_reg
-         http://www.c-jump.com/CIS77/images/x86_register_encoding.png , https://stackoverflow.com/questions/384871/building-an-assembler ,...
-         
-         
-         
-Some conditions:
-
-            Registers:
-                We check if the entered name available in reg_8, reg_16 or reg_32.
-                
-            Label:
-                We check if the line include label by looking for ":".
-                
-            Memory:
-                We check if the name is memory by checking if it's in brackets and
-                The inner name is valid register.
-                
-            Validity:
-                Check if entered instruction isn't supported!
-                Check invalidity of amount of operands of instruction!
-                Check invalidity Type of destination and source operands!
-                Check incompatibility of destination and source size!
-                
-            Instruction:
-                We have to check the included instruction of the line if it's in supported instructions of project.
-                
-Machine code convert solution:
-            JMP -> <Opcode + Bytes Between JMP Instruction and the Label>
-            Add, SUB, AND, OR -> <Opcode + MOD + R/M>
-
-Passing bytes method:
-            for JMP / 8-bit / 32-bit: add(2)
-            for 16-bit: add(3)
-            
+version: 3.1.1  
 '''
 
-# Constant datas, that we're gonna use in the assembler.
+# Constant data, that we're gonna use in the assembler.
 opcode_table = { 
             "ADD": {8: {False: r"\x00", True: r"\x02"}, 16: {False: r"\x66\x01", True: r"\x66\x03"}, 32: {False: r"\x01", True: r"\x03"}},
             "SUB": {8: {False: r"\x28", True: r"\x2A"}, 16: {False: r"\x66\x29", True: r"\x66\x2B"}, 32: {False: r"\x29", True: r"\x2B"}},
