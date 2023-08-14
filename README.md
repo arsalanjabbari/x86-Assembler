@@ -1,4 +1,4 @@
-# Assembler (project.py)
+# x86-Assembler
 
 This repository contains a Python project that implements an assembler for a custom instruction set architecture. The assembler takes assembly code as input and converts it into machine code. The supported instructions include ADD, SUB, AND, OR, and JMP. The assembler also supports working with registers and memory.
 
